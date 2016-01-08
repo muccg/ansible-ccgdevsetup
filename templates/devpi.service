@@ -1,0 +1,23 @@
+[Unit]
+Description=Development pypi server
+Requires=docker.service
+After=docker.service
+
+[Service]
+Environment="DATA=/srv/docker-data/devpi"
+
+ExecStartPre=/bin/sh -c 'mkdir -p ${DATA} && chown 1000:1000 ${DATA}'
+ExecStartPre=-/usr/bin/docker kill devpi
+ExecStartPre=-/usr/bin/docker rm devpi
+ExecStartPre=/usr/bin/docker pull muccg/devpi:latest
+
+ExecStart=/usr/bin/docker run \
+    -h 'devpi' --net bridge -m 0b -p 3141:3141 \
+    -v ${DATA}:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    --name devpi \
+    muccg/devpi:latest
+
+KillSignal=INT
+TimeoutStartSec=0
+TimeoutStopSec=1

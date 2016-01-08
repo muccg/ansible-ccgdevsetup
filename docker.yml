@@ -1,0 +1,10 @@
+- hosts: all
+  connection: local
+  sudo: True
+  roles:
+    - role: angstwad.docker_ubuntu
+      docker_opts: >
+        --storage-driver btrfs
+  tasks:
+    - name: Make sure user is in docker group
+      user: name={{ansible_ssh_user}} groups=docker append=yes

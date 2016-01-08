@@ -1,0 +1,23 @@
+[Unit]
+Description=Squid proxy cache
+Requires=docker.service
+After=docker.service
+
+[Service]
+Environment="DATA=/srv/docker-data/squid"
+
+ExecStartPre=/bin/sh -c 'mkdir -p ${DATA} && chown 1000:1000 ${DATA}'
+ExecStartPre=-/usr/bin/docker kill squid
+ExecStartPre=-/usr/bin/docker rm squid
+ExecStartPre=/usr/bin/docker pull muccg/squid-deb-proxy:latest
+
+ExecStart=/usr/bin/docker run \
+    -h 'squid' --net bridge -m 0b -p 3128:8000 \
+    -v ${DATA}:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    --name squid \
+    muccg/squid-deb-proxy:latest
+
+KillSignal=INT
+TimeoutStartSec=0
+TimeoutStopSec=1

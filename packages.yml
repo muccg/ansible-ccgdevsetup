@@ -1,0 +1,32 @@
+- hosts: all
+  sudo: True
+  tasks:
+    - name: install development packages
+      apt: pkg={{item}}
+      with_items:
+        - git
+        - gitk
+        - gparted
+        - htop
+        - iotop
+        - iptraf
+        - mercurial
+        - parted
+        - screen
+        - shutter
+        - ssh
+        - tcpdump
+        - tmux
+        - tree
+        - vim
+        - vim-common
+        - wget
+        - xclip
+        - zsh
+    - name: install i3 and related packages
+      apt: pkg={{item}}
+      with_items:
+        - dmenu
+        - dunst
+        - i3
+        - i3status

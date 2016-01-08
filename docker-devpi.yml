@@ -1,0 +1,16 @@
+- hosts: all
+  connection: local
+  sudo: True
+  tasks:
+    - name: Set docker devpi options (systemd)
+      template:
+        src: templates/devpi.service
+        dest: /etc/systemd/system/devpi.service
+        owner: root
+        group: root
+        mode: 0644
+      notify:
+        - Reload systemd
+      when: ansible_distribution_version|version_compare(15.04, '>=')
+    - name: Force devpi restart
+      command: systemctl restart devpi
