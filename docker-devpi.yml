@@ -14,5 +14,5 @@
       notify:
         - Reload systemd
         - Enable devpi
-        - Restart squid
+        - Restart devpi
       when: ansible_distribution_version|version_compare(15.04, '>=')
