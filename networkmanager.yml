@@ -1,6 +1,8 @@
 - hosts: all
   connection: local
   sudo: True
+  roles:
+    - role: common
   tasks:
     - name: Disable dnsmasq
       template:
@@ -10,5 +12,5 @@
         group: root
         mode: 0644
       notify:
-              - Restart NetworkManager
+        - Restart NetworkManager
       when: ansible_distribution_version|version_compare(15.04, '>=')
