@@ -1,6 +1,8 @@
 - hosts: all
   connection: local
   sudo: True
+  roles:
+    - role: common
   tasks:
     - name: Set docker devpi options (systemd)
       template:
@@ -11,6 +13,6 @@
         mode: 0644
       notify:
         - Reload systemd
+        - Enable devpi
+        - Restart squid
       when: ansible_distribution_version|version_compare(15.04, '>=')
-    - name: Force devpi restart
-      command: systemctl restart devpi

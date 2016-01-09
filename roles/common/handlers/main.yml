@@ -1,5 +1,4 @@
 ---
-# handlers file for docker.ubuntu
 - name: Start Docker
   service: name=docker state=started
 
@@ -18,8 +17,14 @@
 - name: Restart devpi
   service: name=devpi state=restarted
 
+- name: Enable devpi
+  service: name=devpi enabled=yes
+
 - name: Restart squid
-  service: systemctl restart squid
+  service: name=squid state=restarted
+
+- name: Enable squid
+  service: name=squid enabled=yes
 
 - name: Restart NetworkManager
-  service: systemctl restart NetworkManager
+  service: name=NetworkManager state=restarted
