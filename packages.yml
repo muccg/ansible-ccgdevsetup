@@ -4,6 +4,7 @@
     - name: install development packages
       apt: pkg={{item}}
       with_items:
+        - blueman
         - git
         - gitk
         - gparted
@@ -20,8 +21,10 @@
         - tree
         - vim
         - vim-common
+        - volumeicon-alsa
         - wget
         - xclip
+        - xbacklight
         - zsh
     - name: install i3 and related packages
       apt: pkg={{item}}
