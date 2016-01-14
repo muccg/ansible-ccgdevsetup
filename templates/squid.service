@@ -25,4 +25,4 @@ TimeoutStartSec=0
 TimeoutStopSec=1
 
 [Install]
-WantedBy=local.target
+WantedBy=multi-user.target
