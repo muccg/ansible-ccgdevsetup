@@ -20,4 +20,7 @@ My ansible foo is weak. So please, make suggestions/changes.
 (virt)$ ansible-playbook -K -i inventory packages.yml
 (virt)$ ansible-playbook -K -i inventory google-chrome.yml
 (virt)$ ansible-playbook -K -i inventory docker.yml
+(virt)$ ansible-playbook -K -i inventory firewall.yml
 ```
+
+Check top level project directory for other playbooks.
