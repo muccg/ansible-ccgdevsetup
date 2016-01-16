@@ -7,8 +7,8 @@ After=docker.service
 Environment="DATA=/srv/docker-data/squid"
 
 ExecStartPre=/bin/sh -c 'mkdir -p ${DATA} && chown 1000:1000 ${DATA}'
-ExecStartPre=-/usr/bin/docker kill squid
-ExecStartPre=-/usr/bin/docker rm -f squid
+ExecStartPre=-/usr/bin/docker kill squid || true
+ExecStartPre=-/usr/bin/docker rm -f squid || true
 ExecStartPre=/usr/bin/docker pull muccg/squid-deb-proxy:latest
 
 ExecStart=/usr/bin/docker run \
@@ -23,6 +23,8 @@ ExecStop=/usr/bin/docker stop -t 5 squid ; /usr/bin/docker rm -f squid
 KillSignal=INT
 TimeoutStartSec=0
 TimeoutStopSec=1
+RestartSec=60
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
