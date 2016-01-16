@@ -19,4 +19,4 @@ make_virtualenv() {
 make_virtualenv
 
 ansible-galaxy install -p ./roles angstwad.docker_ubuntu || true
-ansible-galaxy install -p ./roles flyinggecko.i3 || true
+ansible-galaxy install -p ./roles joshualund.golang || true

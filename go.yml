@@ -1,0 +1,5 @@
+- hosts: all
+  connection: local
+  sudo: True
+  roles:
+    - role: joshualund.golang

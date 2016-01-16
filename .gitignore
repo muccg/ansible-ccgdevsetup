@@ -3,4 +3,4 @@ syntax: glob
 virt/*
 .gitignore
 roles/angstwad.docker_ubuntu/
-roles/flyinggecko.i3/
+roles/joshualund.golang/
