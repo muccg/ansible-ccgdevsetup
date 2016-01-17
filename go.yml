@@ -3,3 +3,7 @@
   sudo: True
   roles:
     - role: joshualund.golang
+  tasks:
+    - name: Set GOPATH for all users, overrides what the role does
+      copy: src=files/go-path.sh
+            dest=/etc/profile.d
