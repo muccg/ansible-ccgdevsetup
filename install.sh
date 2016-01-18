@@ -1,22 +1,12 @@
 #!/bin/sh
 
-TOPDIR=$(cd `dirname $0`; pwd)
-
 set -e
 
-VIRTUALENV="${TOPDIR}/virt"
+pip install --user -r requirements.txt
 
-make_virtualenv() {
-  which virtualenv > /dev/null
-  if [ ! -e ${VIRTUALENV} ]; then
-    virtualenv ${VIRTUALENV}
-  fi
-
-  . ${VIRTUALENV}/bin/activate
-  pip install -r requirements.txt
-}
-
-make_virtualenv
-
+export PATH=$PATH:${HOME}/.local/bin/
 ansible-galaxy install -p ./roles angstwad.docker_ubuntu || true
 ansible-galaxy install -p ./roles joshualund.golang || true
+
+echo "\n\nTo use ansible and annsible-galaxy ensure ${HOME}/.local/bin/ is in \${PATH}"
+echo "I've added it to this session for your convenience"

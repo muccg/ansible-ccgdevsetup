@@ -1,26 +1,23 @@
+# Ansible playbooks for local dev machine. 
 
-Ansible playbooks for local dev machine. 
+Quick and dirty playbooks for dev config.
 
-I run this in a non standard location (~/ansible) so I am not polluting /etc/ansible which is dedicated to work. It's quick and dirty.
-
-My ansible foo is weak. So please, make suggestions/changes.
-
-## prerequisites ##
- - python
- - python-dev
- - pip
- - virtualenv
-
-## install ##
- - ./install.sh
- - source virt/bin/activate
-
-## Run playbooks ##
+## Install system dependencies
 ```sh
-(virt)$ ansible-playbook -K -i inventory packages.yml
-(virt)$ ansible-playbook -K -i inventory google-chrome.yml
-(virt)$ ansible-playbook -K -i inventory docker.yml
-(virt)$ ansible-playbook -K -i inventory firewall.yml
+./bootstrap.sh
+```
+
+## Install ansible
+```sh
+./install.sh
+```
+
+## Run playbooks
+```sh
+$ ansible-playbook -b -i inventory packages.yml
+$ ansible-playbook -b -i inventory google-chrome.yml
+$ ansible-playbook -b -i inventory docker.yml
+$ ansible-playbook -b -i inventory firewall.yml
 ```
 
 Check top level project directory for other playbooks.
