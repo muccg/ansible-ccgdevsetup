@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 export PATH=${PATH}:${HOME}/.local/bin/
 
-ansible-playbook --become --inventory-file inventory packages.yml
-ansible-playbook --become --inventory-file inventory google-chrome.yml
-ansible-playbook --become --inventory-file inventory docker.yml
-ansible-playbook --become --inventory-file inventory firewall.yml
+plays=( packages.yml google-chrome.yml docker.yml firewall.yml )
+
+for play in "${plays[@]}"
+do
+    ansible-playbook --become --ask-become-pass --inventory-file inventory $play
+done
