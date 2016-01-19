@@ -17,8 +17,6 @@ ExecStart=/usr/local/go/bin/systemd-docker run \
     --rm \
     muccg/devpi:latest
 
-#ExecStop=/usr/bin/docker stop -t 5 devpi ; /usr/bin/docker rm -f devpi
-
 KillSignal=INT
 TimeoutStartSec=0
 TimeoutStopSec=1
