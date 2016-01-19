@@ -2,9 +2,10 @@
 
 export PATH=${PATH}:${HOME}/.local/bin/
 
-plays=( packages.yml google-chrome.yml docker.yml firewall.yml )
+plays=( go.yml packages.yml google-chrome.yml docker.yml docker-squid.yml docker-devpi.yml firewall.yml )
 
 for play in "${plays[@]}"
 do
-    ansible-playbook --become --ask-become-pass --inventory-file inventory $play
+    echo "Playing $play"
+    ansible-playbook --become --inventory-file inventory $play
 done

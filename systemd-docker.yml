@@ -1,6 +1,6 @@
 - hosts: all
   connection: local
-  sudo: True
+  become: True
   vars:
     - gopath: "{{ lookup('env', 'GOPATH') }}"
     - path: "{{ lookup('env', 'PATH') }}"

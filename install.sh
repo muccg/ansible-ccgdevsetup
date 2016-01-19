@@ -2,7 +2,7 @@
 
 set -e
 
-pip install --user -r requirements.txt
+pip install --user --upgrade -r requirements.txt
 
 export PATH=$PATH:${HOME}/.local/bin/
 ansible-galaxy install -p ./roles angstwad.docker_ubuntu || true

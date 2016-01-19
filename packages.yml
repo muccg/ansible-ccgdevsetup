@@ -1,5 +1,5 @@
 - hosts: all
-  sudo: True
+  become: True
   tasks:
     - name: install development packages
       apt: pkg={{item}}

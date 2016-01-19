@@ -17,8 +17,6 @@ ExecStart=/usr/local/go/bin/systemd-docker run \
     --rm \
     muccg/squid-deb-proxy:latest
 
-#ExecStop=/usr/bin/docker stop -t 5 squid ; /usr/bin/docker rm -f squid
-
 KillSignal=INT
 TimeoutStartSec=0
 TimeoutStopSec=1
