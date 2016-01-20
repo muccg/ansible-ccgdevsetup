@@ -7,12 +7,16 @@ Quick and dirty playbooks for dev config.
 ./bootstrap.sh
 ```
 
-## Run playbooks
+## Run most common playbooks
+`$ sudo ./play_common.sh`
+
+## Run individual playbooks
 ```sh
-$ ansible-playbook -b -i inventory packages.yml
-$ ansible-playbook -b -i inventory google-chrome.yml
-$ ansible-playbook -b -i inventory docker.yml
-$ ansible-playbook -b -i inventory firewall.yml
+$ ansible-playbook --become --inventory inventory packages.yml
+$ ansible-playbook --become --inventory inventory google-chrome.yml
+$ ansible-playbook --become --inventory inventory docker.yml
+$ ansible-playbook --become --inventory inventory firewall.yml
 ```
 
 Check top level project directory for other playbooks.
+
