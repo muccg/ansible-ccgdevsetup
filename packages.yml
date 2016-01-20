@@ -34,3 +34,8 @@
         - i3
         - i3lock
         - i3status
+    - name: install powerline
+      apt: pkg={{item}}
+      with_items:
+        - powerline
+        - python-demjson
