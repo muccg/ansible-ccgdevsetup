@@ -2,14 +2,9 @@
 
 Quick and dirty playbooks for dev config.
 
-## Install system dependencies
+## Install dependencies
 ```sh
 ./bootstrap.sh
-```
-
-## Install ansible
-```sh
-./install.sh
 ```
 
 ## Run playbooks
