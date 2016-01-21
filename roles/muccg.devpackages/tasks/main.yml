@@ -1,0 +1,12 @@
+---
+- name: install development packages
+  apt: pkg={{item}}
+  with_items: "{{ general }}"
+
+- name: install i3 and related packages
+  apt: pkg={{item}}
+  with_items: " {{ i3 }} "
+
+- name: install powerline
+  apt: pkg={{item}}
+  with_items: " {{ powerline }} "

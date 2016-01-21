@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - muccg.golang
+    - muccg.google-chrome
+    - muccg.devpackages
+    - muccg.networkmanager
+    - muccg.docker
+    - muccg.devpi
+    - muccg.squid
+    - muccg.fw

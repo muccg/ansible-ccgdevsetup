@@ -5,14 +5,11 @@ Quick and dirty playbooks for dev config.
 ## Install dependencies
 ```sh
 ./bootstrap.sh
+$ ansible-galaxy install -r requirements.yml
 ```
 
-## Run playbooks
+## Run dev playbook
 ```sh
-$ ansible-playbook -b -i inventory packages.yml
-$ ansible-playbook -b -i inventory google-chrome.yml
-$ ansible-playbook -b -i inventory docker.yml
-$ ansible-playbook -b -i inventory firewall.yml
+$ ansible-playbook devmachine.yml -i inventory --ask-become-pass
 ```
 
-Check top level project directory for other playbooks.

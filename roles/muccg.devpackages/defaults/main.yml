@@ -1,0 +1,35 @@
+---
+general:
+  - blueman
+  - git
+  - gitk
+  - gparted
+  - htop
+  - iotop
+  - iptraf
+  - mercurial
+  - parted
+  - screen
+  - shutter
+  - ssh
+  - tcpdump
+  - tmux
+  - tree
+  - vim
+  - vim-common
+  - volumeicon-alsa
+  - wget
+  - xclip
+  - xbacklight
+  - zsh
+
+i3:
+  - dmenu
+  - dunst
+  - i3
+  - i3lock
+  - i3status
+
+powerline:
+  - powerline
+  - python-demjson
