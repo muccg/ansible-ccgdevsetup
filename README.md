@@ -5,7 +5,6 @@ Quick and dirty playbooks for dev config.
 ## Install dependencies
 ```sh
 ./bootstrap.sh
-$ ansible-galaxy install -r requirements.yml
 ```
 
 ## Run dev playbook

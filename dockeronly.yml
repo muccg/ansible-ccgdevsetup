@@ -4,10 +4,6 @@
   roles:
     - muccg.golang
     - muccg.systemd-docker
-    - muccg.google-chrome
-    - muccg.devpackages
-    - muccg.networkmanager
     - muccg.docker
     - muccg.devpi
     - muccg.squid
-    - muccg.fw
