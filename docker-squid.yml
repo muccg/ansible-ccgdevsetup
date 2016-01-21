@@ -16,3 +16,9 @@
         - Enable squid
         - Restart squid
       when: ansible_distribution_version|version_compare(15.04, '>=')
+    - name: HTTP_PROXY for all users pointing to docker-squid
+      copy: src=files/http-proxy.sh
+            dest=/etc/profile.d
+    - name: Apt using docker-squid
+      copy: src=files/95proxy
+            dest=/etc/apt/apt.conf.d/
