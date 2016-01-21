@@ -2,12 +2,11 @@
 - hosts: localhost
   become: yes
   roles:
-    - muccg.golang
-    - muccg.systemd-docker
-    - muccg.google-chrome
     - muccg.devpackages
-    - muccg.networkmanager
     - muccg.docker
+    - muccg.systemd-docker
     - muccg.devpi
     - muccg.squid
+    - muccg.google-chrome
+    - muccg.networkmanager
     - muccg.fw

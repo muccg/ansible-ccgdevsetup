@@ -2,7 +2,7 @@
 - hosts: localhost
   become: yes
   roles:
-    - muccg.golang
+    - muccg.devpackages
     - muccg.systemd-docker
     - muccg.docker
     - muccg.devpi
