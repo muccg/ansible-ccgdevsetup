@@ -2,22 +2,22 @@
 
 Quick and dirty playbooks for dev config.
 
-## Install system dependencies
+## Install system dependencies (only if you want ubuntu python packages!)
 ```sh
 ./bootstrap.sh
 ```
 
-## Install ansible
+## Install ansible (installs using python --user)
 ```sh
 ./install.sh
 ```
 
 ## Run playbooks
 ```sh
-$ ansible-playbook -b -i inventory packages.yml
-$ ansible-playbook -b -i inventory google-chrome.yml
-$ ansible-playbook -b -i inventory docker.yml
-$ ansible-playbook -b -i inventory firewall.yml
+$ ansible-playbook -k -i inventory packages.yml
+$ ansible-playbook -k -i inventory google-chrome.yml
+$ ansible-playbook -k -i inventory docker.yml
+$ ansible-playbook -k -i inventory firewall.yml
 ```
 
 Check top level project directory for other playbooks.
