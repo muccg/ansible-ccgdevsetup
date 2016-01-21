@@ -19,7 +19,7 @@ ExecStart=/usr/local/go/bin/systemd-docker run \
 
 KillSignal=INT
 TimeoutStartSec=0
-TimeoutStopSec=1
+TimeoutStopSec=10
 RestartSec=60
 Restart=on-failure
 Type=notify
