@@ -8,7 +8,7 @@ Example Playbook
 
     ---
     - hosts: localhost
-      become: no
+      become: yes
       roles:
         - muccg.fw
 
