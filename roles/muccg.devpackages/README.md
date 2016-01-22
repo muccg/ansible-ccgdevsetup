@@ -9,9 +9,9 @@ Example Playbook
 
     ---
     - hosts: localhost
-    become: no
-    roles:
-        - muccg.containers
+      become: yes
+      roles:
+        - muccg.devpackages
 
 
 License
