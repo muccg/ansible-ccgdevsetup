@@ -9,9 +9,7 @@
   apt:
     update_cache: yes
     name: sur5r-keyring
-    dpkg_options: --allow-unauthenticated
     state: latest
-    update_cache: yes 
     force: yes 
 
 - name: Install i3
@@ -19,4 +17,4 @@
     name: "{{ item }}" 
     state: latest 
     update_cache: yes 
-    with_items: "{{ packages }}"
+  with_items: "{{ packages }}"
