@@ -24,13 +24,6 @@ general:
   - zsh
   - golang
 
-i3:
-  - dmenu
-  - dunst
-  - i3
-  - i3lock
-  - i3status
-
 powerline:
   - powerline
   - python-demjson
