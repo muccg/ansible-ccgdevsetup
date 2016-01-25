@@ -1,14 +1,15 @@
 ---
 containers:
+  - python:2
+  - python:3
   - muccg/python-base:ubuntu14.04-2.7
   - muccg/python-base:debian8-2.7
   - muccg/python-base:debian8-3.4
   - muccg/python-base:centos6-2.7
   - muccg/postfix
-  - muccg/debian8-base
-  - muccg/ubuntu14.04-base
-  - muccg/centos6-base
-  - muccg/rpmbuild:centos6
+  - muccg/base:debian-8
+  - muccg/base:ubuntu-14.04
+  - muccg/base:ubuntu-15.10
   - muccg/nginx-uwsgi:1.7
   - muccg/devpi
   - muccg/squid-deb-proxy
