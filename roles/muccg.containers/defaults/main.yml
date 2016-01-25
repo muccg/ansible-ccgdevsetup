@@ -5,9 +5,9 @@ containers:
   - muccg/python-base:debian8-3.4
   - muccg/python-base:centos6-2.7
   - muccg/postfix
-  - muccg/base:debian8
-  - muccg/base:ubuntu14.04
-  - muccg/base:centos6
+  - muccg/debian8-base
+  - muccg/ubuntu14.04-base
+  - muccg/centos6-base
   - muccg/rpmbuild:centos6
   - muccg/nginx-uwsgi:1.7
   - muccg/devpi
