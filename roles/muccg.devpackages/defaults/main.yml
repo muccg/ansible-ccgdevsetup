@@ -15,8 +15,7 @@ general:
   - tcpdump
   - tmux
   - tree
-  - vim
-  - vim-common
+  - vim-gtk
   - volumeicon-alsa
   - wget
   - xclip
