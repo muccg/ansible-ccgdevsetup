@@ -1,6 +1,5 @@
 - hosts: all
   become: True
-  connection: local
   roles:
     - role: angstwad.docker_ubuntu
       docker_opts: >

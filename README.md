@@ -18,10 +18,10 @@ Quick and dirty playbooks for dev config.
 ## Run individual playbooks
 ```sh
 
-$ ansible-playbook -k -i inventory packages.yml
-$ ansible-playbook -k -i inventory google-chrome.yml
-$ ansible-playbook -k -i inventory docker.yml
-$ ansible-playbook -k -i inventory firewall.yml
+$ ansible-playbook --ask-become-pass -i inventory packages.yml
+$ ansible-playbook --ask-become-pass -i inventory google-chrome.yml
+$ ansible-playbook --ask-become-pass -i inventory docker.yml
+$ ansible-playbook --ask-become-pass -i inventory firewall.yml
 ```
 
 Check top level project directory for other playbooks.

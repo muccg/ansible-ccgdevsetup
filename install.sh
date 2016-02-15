@@ -2,9 +2,11 @@
 
 set -e
 
-pip install --user --upgrade -r requirements.txt
+virtualenv virt
+. virt/bin/activate
 
-export PATH=$PATH:${HOME}/.local/bin/
+pip install --upgrade -r requirements.txt
+
 ansible-galaxy install -p ./roles angstwad.docker_ubuntu || true
 ansible-galaxy install -p ./roles joshualund.golang || true
 
