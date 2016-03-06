@@ -1,0 +1,7 @@
+- hosts: all
+  become: True
+  tasks:
+    - name: Disable bluetooth module
+      copy:
+        src: files/bluetooth-modprobe.conf
+        dest: /etc/modprobe.d/disable-bluetooth.conf
