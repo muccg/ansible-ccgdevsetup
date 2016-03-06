@@ -1,0 +1,7 @@
+- hosts: all
+  become: True
+  tasks:
+    - name: custom rc.local
+      copy:
+        src: files/rc.local
+        dest: /etc/rc.local
