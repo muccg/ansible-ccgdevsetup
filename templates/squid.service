@@ -1,7 +1,8 @@
 [Unit]
 Description=Squid proxy cache
 Requires=docker.service
-After=network.target docker.service
+After=network-online.target docker.service
+Wants=network-online.target 
 
 [Service]
 Environment="DATA=/srv/docker-data/squid"
