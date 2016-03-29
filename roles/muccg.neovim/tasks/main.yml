@@ -80,11 +80,32 @@
     - bootstrap
     - configure
 
+# register exitence of ~/dotfiles/vim 
+- name: Check if ~/dotfiles/vim exists
+  stat: path=~/dotfiles/vim
+  register: dotfiles_vim
+
 - block:
-    - name: Install vim plugins 
-      command: nvim "+silent! PlugInstall!" +qall!
-      tags: plugins
+  - name: Link dotfiles/vim in
+    file: src=~/dotfiles/vim  dest=~/.config/nvim state=link
+    
+  - name: Install vim plugins 
+    command: nvim "+silent! PlugInstall!" +qall!
+    tags: plugins
+
+  when: dotfiles_vim.stat.exists == True
   tags:
     - bootstrap
     - configure
     - update
+
+# Install You complete me plugin
+- block:
+  # register exitence of ~/.config/nvim/plugged/YouCompleteMe/
+  - name: Check if ~/.config/nvim/plugged/YouCompleteMe/ exists
+    stat: path=~/.config/nvim/plugged/YouCompleteMe/
+    register: youcompleteme 
+
+  - name: Install YouCompleteMe plugin 
+    command: ~/.config/nvim/plugged/YouCompleteMe/install.py
+    when: youcompleteme.stat.exists == True

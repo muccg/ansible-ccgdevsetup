@@ -1,4 +1,4 @@
 - hosts: localhost
   roles:
-    - sthysel.neovim
+    - muccg.neovim
 
